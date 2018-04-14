@@ -11,7 +11,7 @@ public class Buttons : MonoBehaviour {
 	public float bigger = 0.4f, lower = 0.3f;
 
 	void Start () {
-		if (gameObject.name == "Sound") {
+		if (gameObject.name == "Settings") {
 			if (PlayerPrefs.GetString ("Sound") == "off") {
 				transform.GetChild (0).gameObject.GetComponent <Image> ().sprite = mus_off;
 				Camera.main.GetComponent <AudioListener> ().enabled = false; // Switch off music
@@ -28,7 +28,9 @@ public class Buttons : MonoBehaviour {
 	}
 
 	void OnMouseUpAsButton () {
+		GetComponent <AudioSource> ().Play ();
 		switch (gameObject.name)  { 
+
 
 
 		case "Respect":
