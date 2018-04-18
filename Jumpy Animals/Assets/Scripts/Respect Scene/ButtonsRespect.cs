@@ -21,7 +21,23 @@ public class ButtonsRespect : MonoBehaviour {
 
 
 		case "ZakharovGames":
-			Application.OpenURL ("https://vk.com/im");
+			Application.OpenURL ("https://www.instagram.com/ezakharov13/");
+			break;
+
+		case "DmitryT":
+			Application.OpenURL ("https://www.facebook.com/TerpilDmitry");
+			break;
+
+		case "AlexanderA":
+			Application.OpenURL ("http://antipov3d.com/");
+			break;
+
+		case "Viktor":
+			Application.OpenURL ("https://www.instagram.com/vooorooon/");
+			break;
+
+		case "AlexanderY":
+			Application.OpenURL ("https://vk.com/yashkamen");
 			break;
 		}
 	}

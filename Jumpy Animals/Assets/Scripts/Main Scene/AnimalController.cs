@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class AnimalController : MonoBehaviour {
 
 	Animator anim;
-	[SerializeField]
-	float Timer = 1f;
+	public float Timer = 1f;
 	int score;
-	[SerializeField]
-	Text Score;
+	public Text Score;
+	public GameObject restart;
+	public AudioSource Rec;
+	AudioSource audioSource;
 
 	bool Play = true;
 
@@ -47,6 +48,7 @@ public class AnimalController : MonoBehaviour {
 		Score.text = score.ToString();
 		//start count for loose;
 		counter = StartCoroutine(StartCount());
+		Rec.Stop ();
 	}
 
 	IEnumerator StartCount()
@@ -67,16 +69,21 @@ public class AnimalController : MonoBehaviour {
 	/// </summary>
 	void gameOver()
 	{
+		
 		Score.text = "GameOver";
 		//stop input;
 		Play = false;
+		restart.SetActive (true);
 	}
 
 	void SetJump()
 	{
 		if (counter!=null)
 		StopCoroutine(counter);
+		anim.SetInteger ("New Int", Random.Range (0, 7));
 		anim.SetTrigger("Jump");
+		Rec.Play ();
+
 
 	}
 }

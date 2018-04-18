@@ -31,6 +31,10 @@ public class Buttons : MonoBehaviour {
 		GetComponent <AudioSource> ().Play ();
 		switch (gameObject.name)  { 
 
+		case "Restart":
+			Application.LoadLevel ("Play");
+			break;
+
 
 
 		case "Respect":
@@ -80,6 +84,10 @@ public class Buttons : MonoBehaviour {
 		case "Settings":
 			for (int i = 0; i < transform.childCount; i++)
 				transform.GetChild (i).gameObject.SetActive (!transform.GetChild (i).gameObject.activeSelf);
+			break;
+
+		case "Logo":
+			Application.OpenURL ("https://www.instagram.com/ezakharov13/");
 			break;
 
 		}
